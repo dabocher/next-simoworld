@@ -6,10 +6,10 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
 }
 
-const connectDb = async () => {
+export const connectDb = async () => {
   
   try {
-    const{ connection} = await mongoose.connect(process.env.MONGODB_URI!);
+    const{ connection } = await mongoose.connect(MONGODB_URI);
       if(connection.readyState === 1){
         console.log("Connected to MongoDB");
         return Promise.resolve();
