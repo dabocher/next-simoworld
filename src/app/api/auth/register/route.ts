@@ -1,20 +1,19 @@
 import User from "@/models/user";
 import { NextResponse } from "next/server";
-import { connectDb } from "@/libs/connectDb";
+import { connectDatabase } from "@/libs/connectDb";
 import bcrypt from "bcryptjs";
 
-export const POST = async (request:Request) => {
-
+export const POST = async (request: Request) => {
   const { username, email, password, createdAt } = await request.json();
   if (!password || password.length < 8) {
-    return NextResponse.json("Password must be at least 12 characters long", { status: 400 });
+    return NextResponse.json("Password must be at least 8 characters long", {
+      status: 400,
+    });
   }
 
-
   try {
-  
-    await connectDb();
-    const userFound =  await User.findOne({ $or: [{ email }, { username }] })
+    await connectDatabase();
+    const userFound = await User.findOne({ $or: [{ email }, { username }] });
     if (userFound) {
       return NextResponse.json("User already exists", { status: 409 });
     }
@@ -25,15 +24,14 @@ export const POST = async (request:Request) => {
       password: hashedPassword,
       createdAt,
     });
-  
+
     const savedUser = await user.save();
-     
-    return NextResponse.json({ message: `Hello ${savedUser.username}` });
+
+    return NextResponse.json(
+      { message: `Hello ${savedUser.username}` },
+      { status: 201 }
+    );
   } catch (error) {
-  console.log(error);
-  return NextResponse.error();
-}
+    return NextResponse.error();
+  }
 };
-
-
-

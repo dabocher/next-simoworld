@@ -1,29 +1,24 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-import styles from "./page.module.css";
+import { Metadata } from "next";
 import { Racing_Sans_One } from "next/font/google";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { Metadata } from "next";
+import React, { FormEvent } from "react";
 
 const metadata: Metadata = {
-  title: "Registro",
-  description: "Crea una cuenta para SimoWorld",
+  title: "Inicio",
+  description: "Inicia sesión en SimoWorld",
 };
 
 const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });
 
-const RegisterPage = () => {
-  const [error, setError] = useState("");
+const LoginPage = () => {
   const router = useRouter();
 
   const onSubmitHandler = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const { username, email, password } = event.currentTarget;
+    const { username, password, email } = event.currentTarget;
     try {
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,11 +30,8 @@ const RegisterPage = () => {
         }),
       });
       response.status === 201 && router.push("/login");
-    } catch (error: unknown) {
-      if (error instanceof Error) setError(error.message);
-    }
+    } catch (error: unknown) {}
   };
-
   return (
     <section className={styles.section}>
       <form onSubmit={onSubmitHandler} className={styles.form}>
@@ -96,4 +88,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;

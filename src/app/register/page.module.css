@@ -70,3 +70,10 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
+.linkContainer {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e40909;
+  font-weight: 500;
+}
