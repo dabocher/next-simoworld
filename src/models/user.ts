@@ -12,16 +12,23 @@ const UserSchema = new Schema({
     type: String,
     required: [true, "Please enter a password"],
     minlength: [8, "Password must be at least 8 characters"],
-    match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,"Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"],
-    select: false},
+    match: [
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
+      "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+    ],
+    select: false,
+  },
   email: {
     type: String,
     required: [true, "Please enter an email"],
     unique: [true, "Email already exists"],
-    match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "Please enter a valid email address"]},
-  createAt: 
-    { type: Date,
-      default: Date.now },})
+    match: [
+      /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+      "Please enter a valid email address",
+    ],
+  },
+  createAt: { type: Date, default: Date.now },
+});
 
 const User = models.User || model("User", UserSchema);
 
