@@ -1,7 +1,10 @@
+"use client";
+import styles from "./page.module.css";
 import { Metadata } from "next";
 import { Racing_Sans_One } from "next/font/google";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
+import Link from "next/link";
 
 const metadata: Metadata = {
   title: "Inicio",
@@ -35,7 +38,7 @@ const LoginPage = () => {
   return (
     <section className={styles.section}>
       <form onSubmit={onSubmitHandler} className={styles.form}>
-        <h1 className={racing.className}>Registro</h1>
+        <h1 className={racing.className}>Inicio</h1>
         <div className={styles.formContainer}>
           <div className={styles.container}>
             <label className={racing.className} htmlFor="username">
@@ -78,11 +81,11 @@ const LoginPage = () => {
           className={`${racing.className} ${styles.button}`}
           type="submit"
         >
-          Crear cuenta
+          Iniciar
         </button>
       </form>
       <div className={styles.linkContainer}>
-        <Link href="/login">¿Ya tienes una cuenta?</Link>
+        <Link href="/register">¿No tienes cuenta? Registrate aquí</Link>
       </div>
     </section>
   );
