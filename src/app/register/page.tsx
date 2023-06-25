@@ -34,7 +34,8 @@ const RegisterPage = () => {
           password: password.value,
         }),
       });
-      response.status === 201 && router.push("/login");
+
+      response.status === 201 && router.push("/success");
     } catch (error: unknown) {
       if (error instanceof Error) setError(error.message);
     }
@@ -47,12 +48,12 @@ const RegisterPage = () => {
         <div className={styles.formContainer}>
           <div className={styles.container}>
             <label className={racing.className} htmlFor="username">
-              Usuario
+              Usuaria/o
             </label>
             <input
               name="username"
               type="text"
-              placeholder="Juan_Diez"
+              placeholder="Andrea_Peroni"
               id="username"
               required
             />
@@ -65,7 +66,7 @@ const RegisterPage = () => {
               name="email"
               id="email"
               type="email"
-              placeholder="juan10@hotmail.com"
+              placeholder="andrea.peroni@hotmail.com"
               required
             />
           </div>
@@ -77,7 +78,7 @@ const RegisterPage = () => {
               name="password"
               id="password"
               type="password"
-              placeholder="juanito10"
+              placeholder="andreita123"
               required
             />
           </div>
