@@ -69,7 +69,6 @@ const RegisterPage = () => {
         </div>
         <Button
           text={"Crear cuenta"}
-          disabled={false}
           className={`${racing.className} ${styles.button}`}
           type="submit"
         />

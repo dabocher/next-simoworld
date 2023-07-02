@@ -9,16 +9,15 @@ const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });
 interface ButtonProps {
   text: string;
   type?: "submit" | "button";
-  disabled: boolean;
+
   className: string;
 }
 
-const Button = ({ text, type, className, disabled }: ButtonProps) => {
+const Button = ({ text, type, className }: ButtonProps) => {
   return (
     <button
       type={type}
       className={`${styles.button} ${racing.className} ${className}`}
-      disabled={disabled}
     >
       {text}
     </button>
