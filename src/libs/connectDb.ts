@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-const { MONGODB_URI } = process.env;
+const { NEXT_PUBLIC_MONGODB_URI } = process.env;
 
-if (!MONGODB_URI) {
+if (!NEXT_PUBLIC_MONGODB_URI) {
   throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env"
+    "Please define the NEXT_PUBLIC_MONGODB_URI environment variable inside .env"
   );
 }
 
 export const connectDatabase = async () => {
   try {
-    const { connection } = await mongoose.connect(MONGODB_URI);
+    const { connection } = await mongoose.connect(NEXT_PUBLIC_MONGODB_URI);
     if (connection.readyState === 1) {
       console.log("Connected to MongoDB");
       return Promise.resolve();

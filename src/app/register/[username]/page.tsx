@@ -1,28 +1,39 @@
-"use client";
+// Purpose: Render the page for a registered user.
+// Purpose: type params object
 
 import styles from "./page.module.css";
-import { Racing_Sans_One } from "next/font/google";
+import { Racing_Sans_One, Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Registro completado",
-  description: "Crea una cuenta para SimoWorld",
+  description: "Cuenta en Simoworld creada",
 };
+
+const inter = Inter({ subsets: ["latin"], weight: "400" });
 
 const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });
 
-const RegisterPage = () => {
+interface Params {
+  params: {
+    username: string;
+  };
+}
+
+const Registered = ({ params: { username } }: Params) => {
   return (
     <section className={styles.section}>
       <form className={styles.form}>
         <h1 className={racing.className}>Registro</h1>
         <div className={styles.formContainer}>
           <div className={styles.container}>
-            <label className={racing.className} htmlFor="username">
-              Usuario creado con éxito
-            </label>
+            <p className={inter.className}>
+              La cuenta <br />
+              <span className={racing.className}>{username}</span> <br />
+              ha sido creada con éxito
+            </p>
           </div>
         </div>
       </form>
@@ -33,4 +44,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default Registered;

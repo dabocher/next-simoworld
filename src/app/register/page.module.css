@@ -57,7 +57,7 @@
   line-height: 3rem;
 }
 
-.button {
+/* .button {
   width: 32rem;
   padding: 1rem;
   border-radius: 40px;
@@ -69,7 +69,7 @@
   color: #4e4b5c;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-}
+} */
 
 .linkContainer {
   margin-top: 1rem;

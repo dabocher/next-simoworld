@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: #4e4b5c;
+}
+
+.container label {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form input {
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  line-height: 3rem;
+}
