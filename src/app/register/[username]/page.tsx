@@ -22,7 +22,9 @@ interface Params {
   };
 }
 
-const Registered = ({ params: { username } }: Params) => {
+const Registered = async ({ params: { username } }: Params) => {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
   return (
     <section className={styles.section}>
       <form className={styles.form}>

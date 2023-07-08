@@ -5,6 +5,7 @@ import { Racing_Sans_One } from "next/font/google";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
 import Link from "next/link";
+import Button from "@/components/Button/Button";
 
 const metadata: Metadata = {
   title: "Inicio",
@@ -16,10 +17,19 @@ const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });
 const LoginPage = () => {
   const router = useRouter();
 
+  let isDisabled;
+
   const onSubmitHandler = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const { username, password, email } = event.currentTarget;
+
+    isDisabled = (): boolean => {
+      return (
+        username.value === "" || password.value === "" || email.value === ""
+      );
+    };
+
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
@@ -32,6 +42,7 @@ const LoginPage = () => {
           password: password.value,
         }),
       });
+      return isDisabled;
       response.status === 201 && router.push("/login");
     } catch (error: unknown) {}
   };
@@ -42,12 +53,12 @@ const LoginPage = () => {
         <div className={styles.formContainer}>
           <div className={styles.container}>
             <label className={racing.className} htmlFor="username">
-              Usuario
+              Usuaria/o
             </label>
             <input
               name="username"
               type="text"
-              placeholder="Juan_Diez"
+              placeholder="Noah_Puig"
               id="username"
               required
             />
@@ -60,7 +71,7 @@ const LoginPage = () => {
               name="email"
               id="email"
               type="email"
-              placeholder="juan10@hotmail.com"
+              placeholder="noahpuig@gmail.com"
               required
             />
           </div>
@@ -72,17 +83,23 @@ const LoginPage = () => {
               name="password"
               id="password"
               type="password"
-              placeholder="juanito10"
+              placeholder="********"
               required
             />
           </div>
         </div>
-        <button
+        <Button
+          text={"Inicio"}
+          disabled={isDisabled}
+          className={"btn-login"}
+          type={"submit"}
+        />
+        {/*         <button
           className={`${racing.className} ${styles.button}`}
           type="submit"
         >
           Iniciar
-        </button>
+        </button> */}
       </form>
       <div className={styles.linkContainer}>
         <Link href="/register">¿No tienes cuenta? Registrate aquí</Link>

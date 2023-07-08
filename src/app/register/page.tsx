@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import styles from "./page.module.css";
 import { Racing_Sans_One } from "next/font/google";
 import { useRouter } from "next/navigation";

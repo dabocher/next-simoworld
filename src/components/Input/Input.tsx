@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./input.module.css";
+import styles from "@/app/register/page.module.css";
 import { Racing_Sans_One } from "next/font/google";
 
 const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });

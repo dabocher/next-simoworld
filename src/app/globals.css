@@ -16,6 +16,14 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   background-color: #fff;
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+  color: #4e4b5c;
+}
+
+main {
 }
 
 h1 {

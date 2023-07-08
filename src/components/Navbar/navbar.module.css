@@ -1,0 +1,47 @@
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem;
+  padding: 1rem;
+  background-color: #eeaa00;
+  color: #4e4b5c;
+  width: calc(100vw - 0.6rem);
+}
+.left {
+  display: flex;
+  gap: 2rem;
+}
+.btn {
+  padding: 0.5rem 0.5rem;
+
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  transform: scaleX(0);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #4e4b5c;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 0.2rem;
+}

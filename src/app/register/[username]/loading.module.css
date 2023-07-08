@@ -1,0 +1,65 @@
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translateX(-60%);
+  width: fit-content;
+}
+
+.scanner span {
+  color: #2b2547;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+/* purpose: to make the scanner animation with oswald font-family*/
+
+.scanner span:nth-child(1) {
+  animation: scanner 3s linear infinite;
+}
+
+.scanner span:nth-child(2) {
+  animation: scanner 3s linear 1s infinite;
+}
+
+.scanner span:nth-child(3) {
+  animation: scanner 3s linear 2s infinite;
+}
+
+@keyframes scanner {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
