@@ -1,11 +1,13 @@
-import React from "react";
 import styles from "./Loading.module.css";
+interface LoadingProps {
+  loadingText: string;
+}
 
-const Loading = () => {
+const Loading = ({ loadingText }: LoadingProps) => {
   return (
     <div className={styles.loader}>
       <div className={styles.scanner}>
-        <span>Loading...</span>
+        <span>{loadingText}</span>
       </div>
     </div>
   );

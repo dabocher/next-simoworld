@@ -1,0 +1,17 @@
+.button {
+  width: 32rem;
+  padding: 1rem;
+  border-radius: 40px;
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #eeaa00;
+  color: #4e4b5c;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.button.disabled {
+  background: #eeaa0022;
+}
