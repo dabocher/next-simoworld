@@ -4,15 +4,27 @@ export interface UserCredentials {
   password: string;
 }
 
-export interface LoginResponse {
-  token: string;
-}
 export interface UseUserStructure {
   loginUser: (userCredentials: UserCredentials) => Promise<void>;
 }
+
+export interface LoginResponse {
+  token: string;
+}
+
 export interface CustomTokenPayload extends LoginResponse {
   id: string;
   username: string;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  token: string;
+}
+
+export interface UserState extends User {
+  isLogged: boolean;
 }
 
 export interface Event {
@@ -28,4 +40,8 @@ export interface Event {
   price: number;
   image: string;
   slots: number;
+}
+
+export interface Events {
+  events: Event[];
 }

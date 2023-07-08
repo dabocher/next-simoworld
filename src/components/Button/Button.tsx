@@ -9,7 +9,7 @@ const racing = Racing_Sans_One({ subsets: ["latin"], weight: "400" });
 interface ButtonProps {
   text: string;
   type?: "submit" | "button";
-
+  isDisabled?: boolean;
   className: string;
 }
 
