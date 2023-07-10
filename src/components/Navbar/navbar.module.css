@@ -12,11 +12,12 @@
 }
 .left {
   display: flex;
-  gap: 2rem;
+  gap: 1.6rem;
   width: 20rem;
+  padding-left: 1rem;
 }
 .btn {
-  width: 10rem;
+  width: auto;
   padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
@@ -38,6 +39,7 @@
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
+
 .btn:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -45,5 +47,5 @@
 
 .link {
   text-decoration: none;
-  font-size: 0.2rem;
+  font-size: 1.6rem;
 }
