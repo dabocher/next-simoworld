@@ -13,14 +13,16 @@
 .left {
   display: flex;
   gap: 2rem;
+  width: 20rem;
 }
 .btn {
+  width: 10rem;
   padding: 0.5rem 0.5rem;
-
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   position: relative;
+  color: #4e4b5c;
 }
 
 .btn::after {

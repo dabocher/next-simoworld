@@ -1,10 +1,12 @@
-import User from "@/models/user";
+// REGISTER ROUTE
+
+import User from "@/models/UserSchema";
 import { NextResponse } from "next/server";
 import { connectDatabase } from "@/libs/connectDb";
 import bcrypt from "bcryptjs";
 
 export const POST = async (request: Request) => {
-  const { username, email, password, createdAt } = await request.json();
+  const { username, email, password } = await request.json();
   if (!password || password.length < 8) {
     return NextResponse.json("Password must be at least 8 characters long", {
       status: 400,
@@ -22,7 +24,6 @@ export const POST = async (request: Request) => {
       username,
       email,
       password: hashedPassword,
-      createdAt,
     });
 
     const savedUser = await user.save();
@@ -32,6 +33,7 @@ export const POST = async (request: Request) => {
       { status: 201 }
     );
   } catch (error) {
+    console.log(error, "error en el backend");
     return NextResponse.error();
   }
 };

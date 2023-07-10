@@ -16,7 +16,6 @@ const UserSchema = new Schema({
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
       "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
     ],
-    select: false,
   },
   email: {
     type: String,
@@ -27,7 +26,6 @@ const UserSchema = new Schema({
       "Please enter a valid email address",
     ],
   },
-  createAt: { type: Date, default: Date.now },
 });
 
 const User = models.User || model("User", UserSchema);
