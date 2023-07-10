@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SimoWorld",
-  description: "Tu buscador de eventos para SimRacers",
+  description: "El buscador de eventos para SimRacers",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
