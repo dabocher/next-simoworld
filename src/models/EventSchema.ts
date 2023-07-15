@@ -25,8 +25,8 @@ const EventSchema = new Schema({
       "La descripción del evento debe tener menos de 500 caracteres",
     ],
   },
-  date: {
-    type: Date,
+  eventDay: {
+    type: String,
     required: [true, "Por favor, introduzca una fecha para el evento"],
   },
   circuit: {

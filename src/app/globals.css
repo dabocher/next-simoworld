@@ -17,13 +17,17 @@ body {
   line-height: 1.5;
   background-color: #fff;
   display: flex;
-  margin-top: 5rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #4e4b5c;
 }
 
 main {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 h1 {
