@@ -11,7 +11,8 @@ const EventPage = async () => {
 
   return (
     <div>
-      <ul>
+      <h1 className={`${oswald.className} ${styles.title}`}>Eventos</h1>
+      <ul className={styles.listContainer}>
         <li className={`${styles.container} ${oswald.className}`}>
           {events.map((event) => {
             return (
@@ -37,7 +38,7 @@ const EventPage = async () => {
                     height={169}
                     className="rounded-xl"
                   />
-                  <h2 className={styles.title}>
+                  <h2 className={styles.titleEvent}>
                     {event.eventName}
                     <span> {event.eventDay}</span>
                   </h2>
