@@ -9,9 +9,9 @@ export interface CustomTokenPayload extends JwtPayload {
 
 export interface Event {
   id: number;
-  title: string;
+  eventName: string;
   description: string;
-  date: Date;
+  eventDay: string;
   simulator: string;
   track: string;
   car: string;
@@ -22,6 +22,9 @@ export interface Event {
   slots: number;
 }
 
-export interface Events {
-  events: Event[];
+export type Events = Event[];
+
+export interface EventsStructure {
+  events: Events;
+  eventDetail: Event;
 }

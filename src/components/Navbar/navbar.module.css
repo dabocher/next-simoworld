@@ -4,11 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.3rem;
+
   padding: 1rem;
   background-color: #eeaa00;
   color: #4e4b5c;
-  width: calc(100vw - 0.6rem);
+  width: calc(100vw);
 }
 .left {
   display: flex;
@@ -23,7 +23,7 @@
   text-decoration: none;
   font-weight: bold;
   position: relative;
-  color: #4e4b5c;
+  color: #383547;
 }
 
 .btn::after {

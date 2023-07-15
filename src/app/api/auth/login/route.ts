@@ -37,9 +37,9 @@ export const POST = async (request: Request) => {
     const token = jwt.sign(jwtPayload, process.env.JWT_SECRET!, {
       expiresIn: "2d",
     });
-    console.log(token);
+
     return NextResponse.json({ token });
-  } catch (error) {
+  } catch (error: unknown) {
     return NextResponse.error();
   }
 };
