@@ -1,6 +1,6 @@
 import getAllEvents from "@/utils/getAllEvents";
 import styles from "./page.module.css";
-import { Oswald, Montserrat as Inter } from "next/font/google";
+import { Oswald, Inter } from "next/font/google";
 import Image from "next/image";
 
 const oswald = Oswald({ subsets: ["latin"], weight: "400" });
@@ -10,9 +10,11 @@ const EventPage = async () => {
   const events = await getAllEvents();
 
   return (
-    <div>
-      <h1 className={`${oswald.className} ${styles.title}`}>Eventos</h1>
-      <ul className={styles.listContainer}>
+    <div className={styles.eventsContainer}>
+      <ul>
+        <h1 className={`${oswald.className} ${styles.title} rounded-xl`}>
+          Eventos
+        </h1>
         <li className={`${styles.container} ${oswald.className}`}>
           {events.map((event) => {
             return (

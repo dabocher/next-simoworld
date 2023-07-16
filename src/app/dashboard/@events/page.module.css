@@ -1,6 +1,19 @@
+.eventsContainer {
+  width: 50%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .title {
+  width: 93.7%;
+  margin: 0 auto;
   text-align: center;
   margin-top: 2rem;
+  height: 6.2rem;
+
+  background-color: #4e4b5c;
+  color: #eee;
 }
 
 .container {
