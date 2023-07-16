@@ -28,3 +28,13 @@ export interface EventsStructure {
   events: Events;
   eventDetail: Event;
 }
+
+export interface Community {
+  id: number;
+  name: string;
+  description: string;
+  discord: string;
+  website: string;
+}
+
+export type Communities = Community[];
